@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "flow": "^0.2.3",
     "react": "16.8.3",
     "react-native": "0.59.9"
   },
