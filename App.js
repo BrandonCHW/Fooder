@@ -28,6 +28,7 @@ export default class App extends Component<{}> {
 
   handleFetchLocation = () => {
     console.log("get my location pressed");
+
   }
 }
 
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#B21E5E',
   },
   welcome: {
     fontSize: 20,
