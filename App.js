@@ -23,7 +23,7 @@ export default class App extends Component<{}> {
     return (
       <View style={styles.container}>
         <GetMyLocation onGetLocation={this.handleFetchLocation}></GetMyLocation>
-        <Text>Latitude: {this.latitude}</Text>
+        <Text>Latitude: {this.state.latitude}</Text>
         <Text>Longitude: {this.longitude}</Text>
       </View>
     );
