@@ -8,7 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
-import { FetchLocation } from './components/FetchLocation';
+import { GetMyLocation } from './components/GetMyLocation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -21,7 +21,7 @@ export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <FetchLocation onGetLocation={this.handleFetchLocation}></FetchLocation>
+        <GetMyLocation onGetLocation={this.handleFetchLocation}></GetMyLocation>
       </View>
     );
   }
