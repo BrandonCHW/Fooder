@@ -8,6 +8,7 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
+import { FetchLocation } from './components/FetchLocation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -16,20 +17,17 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component {
+export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
-
-		<Button
-		  title="Get My Location"
-      onPress="()=>{}">        
-    </Button>
+        <FetchLocation onGetLocation={this.handleFetchLocation}></FetchLocation>
       </View>
     );
+  }
+
+  handleFetchLocation = () => {
+    console.log("get my location pressed");
   }
 }
 
