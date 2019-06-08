@@ -28,7 +28,7 @@ export default class App extends Component<{}> {
 
   handleFetchLocation = () => {
     console.log("get my location pressed");
-
+    navigator.geolocation.getCurrentPosition((pos) => console.log(pos), (err) => console.log("couldn't get location"));
   }
 }
 
