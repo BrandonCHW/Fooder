@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		justifyContent: "center",
 		alignItems: "center",
-		backgroundColor: "#B21E5E"
+		backgroundColor: "#80CFF1"
 	},
 	welcome: {
 		fontSize: 20,
