@@ -8,7 +8,12 @@
 
 import React, { Component } from "react";
 import { Platform, StyleSheet, Text, View, Button } from "react-native";
+import axios from "axios";
 import { GetMyLocation } from "./components/GetMyLocation";
+import { GetMCPho } from "./components/YelpFusionAPI";
+
+const getBusinessByPhoneUrl = "https://api.yelp.com/v3/businesses/search";
+const apiKey = "Bearer xLyE5OR2Dgqb5c_RfOC99Aot36lMIf7Bsf3CAG6u6bZxaOuOrBpqjbSyTL1byX_rU2HRjaLC5wFQ1iUndCTCX2yQHB61CgzEG1kd0r_lk1hLvmDfe20lYrYFz4r8XHYx";
 
 type Props = {};
 type State = {
@@ -30,6 +35,7 @@ export default class App extends Component<Props, State> {
 				<GetMyLocation onGetLocation={this.handleFetchLocation} />
 				<Text>Latitude: {this.state.latitude}</Text>
 				<Text>Longitude: {this.state.longitude}</Text>
+				<GetMCPho onGetNearbyRestaurant={this.getNearbyRestaurant}></GetMCPho>
 			</View>
 		);
 	}
@@ -50,6 +56,24 @@ export default class App extends Component<Props, State> {
 			},
 			err => console.log("couldn't get location")
 		);
+	};
+
+	getNearbyRestaurant = async () => {
+		console.log("Getting nearby restaurant...");
+		// const request = await axios.get(getBusinessByPhoneUrl, {
+		// 	auth: apiKey,
+		// 	params: {
+		// 		phone: "\+14509040660" // MC PHO Brossard
+		// 	}
+		// }).then(r => console.log(r));
+		const instance = axios.get(
+			"https://api.yelp.com/v3/businesses/search/phone?phone=+14509040660", {
+				headers: { 'Authorization': apiKey },
+			}
+		)
+		.then(r => console.log(r))
+		.catch(err => console.log(err));
+		// const request = await axios.get("https://postman-echo.com/get").then(r => console.log(r));
 	};
 }
 
