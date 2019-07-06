@@ -8,7 +8,7 @@ const apiKey = "Bearer xLyE5OR2Dgqb5c_RfOC99Aot36lMIf7Bsf3CAG6u6bZxaOuOrBpqjbSyT
 
 export const GetMCPho = (props) => {
     return (
-        <Button title = "Get MC Pho Brossard"
+        <Button title = "Get 10 Restaurants"
             onPress={props.onGetNearbyRestaurant}>
 
             </Button>
